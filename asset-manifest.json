@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Fasal.ai/static/css/main.a5b7e0c4.css",
+    "main.js": "/Fasal.ai/static/js/main.1ba013c2.js",
+    "static/js/453.75a21eaa.chunk.js": "/Fasal.ai/static/js/453.75a21eaa.chunk.js",
+    "index.html": "/Fasal.ai/index.html",
+    "main.a5b7e0c4.css.map": "/Fasal.ai/static/css/main.a5b7e0c4.css.map",
+    "main.1ba013c2.js.map": "/Fasal.ai/static/js/main.1ba013c2.js.map",
+    "453.75a21eaa.chunk.js.map": "/Fasal.ai/static/js/453.75a21eaa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a5b7e0c4.css",
+    "static/js/main.1ba013c2.js"
+  ]
+}
