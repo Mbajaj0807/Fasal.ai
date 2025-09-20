@@ -37,7 +37,7 @@ const Header = () => {
         <div className="profile-dropdown">
           <button className="profile-btn">
             <User size={20} />
-            <span>John Farmer</span>
+            <span>Manan Bajaj</span>
           </button>
         </div>
       </div>

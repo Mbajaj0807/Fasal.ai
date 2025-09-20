@@ -1,0 +1,246 @@
+.metric-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.metric-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  min-height: 120px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+}
+
+/* Bright agricultural theme colors */
+.metric-card.green::before {
+  background: linear-gradient(90deg, #4caf50, #8bc34a, #aed581);
+}
+
+.metric-card.sky::before {
+  background: linear-gradient(90deg, #03a9f4, #29b6f6, #81d4fa);
+}
+
+.metric-card.amber::before {
+  background: linear-gradient(90deg, #ffa726, #ffb74d, #ffcc80);
+}
+
+.metric-card.leaf::before {
+  background: linear-gradient(90deg, #66bb6a, #81c784, #a5d6a7);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.card-icon {
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+}
+
+.card-title {
+  font-size: 13px;
+  color: #616161;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2c3e50;
+  line-height: 1;
+  margin: 8px 0;
+}
+
+.card-subtitle {
+  font-size: 13px;
+  color: #757575;
+  font-weight: 400;
+}
+
+.trend-indicator {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.trend-indicator.good {
+  background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
+  color: #2e7d32;
+  border: 2px solid #66bb6a;
+  box-shadow: 0 2px 6px rgba(76, 175, 80, 0.3);
+}
+
+.trend-indicator.warning {
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+  color: #ef6c00;
+  border: 2px solid #ffa726;
+  box-shadow: 0 2px 6px rgba(255, 152, 0, 0.3);
+}
+
+/* Bright agricultural accent colors for each card type */
+.metric-card.green .card-icon {
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  border: 1px solid #a5d6a7;
+}
+
+.metric-card.green .card-value {
+  color: #2e7d32;
+}
+
+.metric-card.sky .card-icon {
+  background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+  border: 1px solid #81d4fa;
+}
+
+.metric-card.sky .card-value {
+  color: #0277bd;
+}
+
+.metric-card.amber .card-icon {
+  background: linear-gradient(135deg, #fff8e1, #ffecb3);
+  border: 1px solid #ffd54f;
+}
+
+.metric-card.amber .card-value {
+  color: #f57c00;
+}
+
+.metric-card.leaf .card-icon {
+  background: linear-gradient(135deg, #f1f8e9, #dcedc8);
+  border: 1px solid #aed581;
+}
+
+.metric-card.leaf .card-value {
+  color: #558b2f;
+}
+
+/* Hover glow effects */
+.metric-card.green:hover {
+  box-shadow: 0 8px 24px rgba(76, 175, 80, 0.2);
+  border-color: #a5d6a7;
+}
+
+.metric-card.sky:hover {
+  box-shadow: 0 8px 24px rgba(3, 169, 244, 0.2);
+  border-color: #81d4fa;
+}
+
+.metric-card.amber:hover {
+  box-shadow: 0 8px 24px rgba(255, 167, 38, 0.2);
+  border-color: #ffd54f;
+}
+
+.metric-card.leaf:hover {
+  box-shadow: 0 8px 24px rgba(139, 195, 74, 0.2);
+  border-color: #aed581;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .metric-cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .metric-cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 15px 0;
+  }
+
+  .metric-card {
+    padding: 15px;
+    min-height: 100px;
+  }
+
+  .card-value {
+    font-size: 28px;
+  }
+
+  .card-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  .card-title {
+    font-size: 12px;
+  }
+
+  .card-subtitle {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .metric-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .metric-card {
+    padding: 12px;
+    min-height: 90px;
+  }
+
+  .card-value {
+    font-size: 24px;
+  }
+
+  .trend-indicator {
+    top: 12px;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+}
