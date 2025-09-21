@@ -5,15 +5,15 @@ const MetricCards = () => {
   const cards = [
     {
       title: 'Active Fields',
-      value: '0',
-      subtitle: '0 from last month',
+      value: '4',
+      subtitle: '1 from last month',
       icon: '🌾',
       trend: 'neutral',
       color: 'green'
     },
     {
       title: 'Online Sensors',
-      value: '0/0',
+      value: '3/3',
       subtitle: 'All systems operational',
       icon: '📡',
       trend: 'good',
@@ -21,7 +21,7 @@ const MetricCards = () => {
     },
     {
       title: 'System Health',
-      value: '0%',
+      value: '66%',
       subtitle: 'Needs attention',
       icon: '🌱',
       trend: 'warning',
@@ -29,7 +29,7 @@ const MetricCards = () => {
     },
     {
       title: 'Active Alerts',
-      value: '0',
+      value: '3',
       subtitle: 'All systems normal',
       icon: '🔔',
       trend: 'good',

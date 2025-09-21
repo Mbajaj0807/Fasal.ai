@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './SoilAnalysis.css';
-
+import Toast from '../components/Toast';
 const SoilAnalysis = () => {
   const [formData, setFormData] = useState({
     nitrogen: '',
@@ -12,6 +12,22 @@ const SoilAnalysis = () => {
   const [prediction, setPrediction] = useState(null);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
+  const [toast, setToast] = useState(null);
+
+// Function to show toast
+const showToast = (message, type = 'error', duration = 5000) => {
+  setToast({ message, type, duration });
+
+  // Automatically remove toast after duration
+  setTimeout(() => setToast(null), duration);
+};
+
+
+// Inside your SoilAnalysis component
+
+const handleGetSensorData = () => {
+  showToast("Unable to fetch sensor data. Sensors not found!");
+};
 
   // Handle input changes
   const handleInputChange = (e) => {
@@ -147,6 +163,13 @@ const SoilAnalysis = () => {
 
   return (
     <div className="page-container">
+      {toast && (
+    <Toast
+      message={toast.message}
+      type={toast.type}
+      onClose={() => setToast(null)}
+    />
+  )}
       <h1>Soil Analysis</h1>
       <div className="page-content">
         <p>Enter your soil parameters to get AI-powered recommendations for optimal crop growth.</p>
@@ -240,6 +263,13 @@ const SoilAnalysis = () => {
                    Predict Soil Quality
                 </>
               )}
+            </button>
+            <button 
+              className="predict-btn"
+              onClick={handleGetSensorData}
+              disabled={loading}
+            >
+               Get Sensor Data
             </button>
             <button 
               className="reset-btn"

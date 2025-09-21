@@ -1,6 +1,8 @@
 import React from 'react';
 import WeatherWidget from '../components/WeatherWidget';
 import MetricCards from '../components/MetricCards';
+import MainMap from '../components/MainMap';
+
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -20,7 +22,9 @@ const Dashboard = () => {
         <h2>Farm Overview</h2>
         <p>Welcome to your agriculture monitoring dashboard. Monitor weather conditions above and track your system metrics to make informed farming decisions.</p>
         {/* More dashboard content will go here */}
+        <MainMap />
       </div>
+      
     </div>
   );
 };
